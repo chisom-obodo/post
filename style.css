@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Poppins";
+}
+body{
+    height: 90%;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns:30% 1fr 25% ;
+    grid-template-rows: 8% repeat(4, 1fr);
+    grid-template-areas: 
+    "header header  header"
+    "post list  suggestion"
+    "post-section list  suggestion"
+    "post-section list  suggestion"
+    "post-section list-post  suggestion";
+    width: 100%;
+    height: 100%;
+    grid-gap: 10px;
+    background-color: rgb(228, 223, 223);
+}
+.blog{
+    padding: 10px;
+}
+.grid-blog{
+    background-color: white;
+   
+}
+.grid-blog.header{
+    grid-area: header;
+    background-color: rgb(13, 8, 77);
+    padding: 10px 20px;
+    
+}
+header nav{
+    display: flex;
+    width: 85%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav ul{
+   display: flex;
+   justify-content: space-between;
+   width: 40%;
+   align-items: center;
+   position: relative;
+}
+header nav ul li{
+    list-style: none; 
+    position: relative;
+}
+header nav ul li a{
+    color: #fff;
+    text-decoration: none; 
+}
+header nav ul li a:hover{
+    text-decoration: none;
+    transition: all .3s ease-in-out; 
+}
+header nav ul li ul{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    background-color:rgb(13, 8, 77) ;
+    width: 220%;
+    top: 100%;
+}
+header nav ul li.first-drop:hover > ul{
+    display: block;    
+}
+header nav ul li ul li a{
+    width: 100%;
+    padding: 10px 20px;
+    display: inline-block;
+}
+header nav ul li.first-drop:hover > ul li:hover{
+    background-color: yellowgreen;
+    width: 100%;
+}
+header nav ul li.first-drop:hover ul li.second-drop > ul{
+    display:block;
+    left: 100%;
+    top: 0;
+    width: 100%;
+    position: absolute;
+    background-color:rgb(13, 8, 77) ;
+}
+header nav ul li ul li ul li{
+  display: none;
+}
+header nav ul li ul li:hover ul li{
+    display: block;
+}
+
+header nav .logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(69, 212, 69);
+}
+header nav .profile-image img{
+    border-radius: 50%;
+}
+
+/* end of header section */
+
+.grid-blog.post{
+    grid-area: post;
+}
+.one-content{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.emoji{
+     padding: 10px;
+     display: flex;
+     height: 120px;
+     align-items: flex-end;
+     justify-content: space-between;
+     width: 40%;
+     
+}
+.emoji a{
+     display: flex;
+     justify-content: space-between;
+     width: 60%;
+     text-decoration: none;
+     color: #000;
+}
+.button{
+  display: flex;
+  align-items: flex-end;
+}
+.button button{
+     background-color: rgb(13, 8, 77);
+     width: 4rem;
+     margin-bottom: 1em;
+     color: white;
+ }
+ .button button:hover{
+     cursor: pointer;
+ }
+
+/* end of post  */
+.grid-blog.post-section{
+    grid-area: post-section;
+    width: 100%;
+}
+.feed-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.feed-section .logo{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+.feed-section .logo img{
+    width: 100%;
+    border-radius: 50%;
+}
+.image-div{
+    width: 100%;
+    /* padding: 15px; */
+    line-height: 1.1rem;
+    border: 1px solid rgba(124, 121, 121, 0.5);
+    
+}
+.image-div img{
+    width: 100%;
+    
+}
+.para{
+    padding: 15px;
+}
+.section-details {
+    flex: 1;
+}
+
+.user-name {
+    margin: 0;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.user-job {
+    margin: 0;
+    font-size: 0.9em;
+    color: grey;
+}
+
+.time {
+    font-size: 0.9em;
+    color: grey;
+}
+.red{
+    color: red;
+}
+.reactions{
+    display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10%;  
+    padding: 10px;
+    cursor: pointer; 
+}
+/* end of post-section */
+.grid-blog.list{
+    grid-area:list;
+}
+.center-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.center-section .image{
+    width: 50px;
+}
+.center-section .image img{
+    width: 100%;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.link-image{
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+}
+.link-image img{
+    width:100%;
+}
+.reaction{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5%;  
+    padding: 10px;
+    cursor: pointer; 
+}
+/* end of list */
+.grid-blog.list-post{
+    grid-area: list-post;
+}
+.fifth-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 90%;
+}
+.fifth-section img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+/* end of list post */
+.grid-blog.suggestion{
+    grid-area: suggestion;
+}
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    
+    /* transition: background-color 0.3s; */
+}
+
+.suggestion-item:hover {
+    background-color: #f9f9f9;
+}
+
+.suggestion-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.suggestion-info {
+    flex: 1;
+}
+
+.suggestion-title {
+        margin: 0;
+        font-size: 1em;
+        font-weight: bold;
+}
+
+.suggestion-subtitle {
+    margin: 0;
+    font-size: 0.9em;
+    color: grey;
+}
+
+.add-button {
+    background-color: rgb(13, 8, 77);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 5px 10px;
+    cursor: pointer;
+    /* transition: background-color 0.3s; */
+}
+
+.add-button:hover {
+    background-color: rgb(69, 212, 69);
+}
+.suggestions-list .see-more{
+    width: 100%;
+    display: flex;
+    margin-top: 20%;
+    height: 2rem;
+}
+.suggestions-list .see-more button{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(13, 8, 77);
+    color: white;
+}
+.suggestions-list .see-more button:hover{
+    cursor: pointer;
+    transition: all.3s ease-in-out;
+    color: greenyellow;
+}
