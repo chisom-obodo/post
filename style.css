@@ -6,21 +6,22 @@
     text-decoration: none;
     font-family: "Poppins";
 }
-body{
+/* body{
     height: 90%;
-}
+} */
 .grid-container{
     display: grid;
-    grid-template-columns:30% 1fr 25% ;
+    grid-template-columns:1fr 1fr 25%;
     grid-template-rows: 8% repeat(4, 1fr);
     grid-template-areas: 
-    "header header  header"
+    "post list  suggestion"
     "post list  suggestion"
     "post-section list  suggestion"
-    "post-section list  suggestion"
-    "post-section list-post  suggestion";
+    "post-section list-post  suggestion"
+    "post-section list-post suggestion";
     width: 100%;
     height: 100%;
+    min-height: 100vh;
     grid-gap: 10px;
     background-color: rgb(228, 223, 223);
 }
@@ -111,26 +112,33 @@ header nav .profile-image img{
 
 .grid-blog.post{
     grid-area: post;
+    display: flex;
+}
+.grid-blog .post{
+    /* height: 100%; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    
 }
 .one-content{
-    padding: 10px;
+    
+    margin-top: auto;
     display: flex;
+    align-content: center;
     justify-content: space-between;
     
 }
 .emoji{
      padding: 10px;
      display: flex;
-     height: 120px;
-     align-items: flex-end;
+     align-items: center;
      justify-content: space-between;
      width: 40%;
      
 }
 .emoji a{
-     display: flex;
-     justify-content: space-between;
-     width: 60%;
      text-decoration: none;
      color: #000;
 }
@@ -151,17 +159,24 @@ header nav .profile-image img{
 /* end of post  */
 .grid-blog.post-section{
     grid-area: post-section;
+    display: flex;
+}
+.post-sec-con{
     width: 100%;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 10px;
 }
 .feed-section {
     display: flex;
-    align-items: center;
+    align-content: center;
     justify-content: space-between;
-    margin-bottom: 10px;
+    /* margin-bottom: auto; */
 }
 .feed-section .logo{
     width: 50px;
-    height: 50px;
+    /* height: 50px; */
     margin-right: 10px;
 }
 .feed-section .logo img{
@@ -170,13 +185,15 @@ header nav .profile-image img{
 }
 .image-div{
     width: 100%;
+    height: 150%;
     /* padding: 15px; */
-    line-height: 1.1rem;
+    /* line-height: 1.1rem; */
     border: 1px solid rgba(124, 121, 121, 0.5);
     
 }
 .image-div img{
     width: 100%;
+    height: 70%;
     
 }
 .para{
@@ -210,7 +227,7 @@ header nav .profile-image img{
     width: 70%;
     align-items: center;
     justify-content: space-between;
-    margin-top: 10%;  
+    margin-top: auto;  
     padding: 10px;
     cursor: pointer; 
 }
@@ -218,11 +235,18 @@ header nav .profile-image img{
 .grid-blog.list{
     grid-area:list;
 }
+.list-con{
+    width: 100%;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 10px;
+}
 .center-section{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 .center-section .image{
     width: 50px;
@@ -234,7 +258,7 @@ header nav .profile-image img{
 }
 .link-image{
     width: 100%;
-    height: 50%;
+    /* height: 50%; */
     overflow: hidden;
 }
 .link-image img{
@@ -242,10 +266,10 @@ header nav .profile-image img{
 }
 .reaction{
     display: flex;
-    width: 50%;
+    width: 70%;
     align-items: center;
     justify-content: space-between;
-    margin-top: 5%;  
+    margin-top: auto;  
     padding: 10px;
     cursor: pointer; 
 }
@@ -257,8 +281,23 @@ header nav .profile-image img{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     width: 90%;
+}
+.list-post-con{
+    width: 100%;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 10px; 
+}
+.add-img{
+    width: 100%;
+    height: 80%   
+}
+.add-img img{
+    width: 100%;
+    height: 80%;
 }
 .fifth-section img{
     width: 50px;
@@ -270,11 +309,18 @@ header nav .profile-image img{
 .grid-blog.suggestion{
     grid-area: suggestion;
 }
+.suggestions{
+    width: 100%;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 10px; 
+}
 .suggestion-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     padding: 10px;
     
     /* transition: background-color 0.3s; */
@@ -313,6 +359,7 @@ header nav .profile-image img{
     border: none;
     border-radius: 25px;
     padding: 5px 10px;
+    margin: 0 70px;
     cursor: pointer;
     /* transition: background-color 0.3s; */
 }
@@ -338,4 +385,81 @@ header nav .profile-image img{
     cursor: pointer;
     transition: all.3s ease-in-out;
     color: greenyellow;
+}
+@media screen and (max-width:1002px){
+    .image-div{
+        width: 100%;
+        height: 130%;        
+    }
+    .image-div img{
+        width: 100%;
+        height: 60%;
+        
+    }
+    .reactions{
+        width: 80%;
+    }
+    .reaction{
+        width: 80%;
+    }
+}
+@media screen and (max-width:923px){
+    .grid-container{
+        display: grid;
+        grid-template-columns:1fr 1fr 25%;
+        grid-template-rows: 8% repeat(3, 1fr);
+        grid-template-areas: 
+        "post list list"
+        "post-section list list"
+        "post-section list list"
+        "list-post suggestion suggestion"
+        "list-post suggestion suggestion";
+
+    }
+    header nav ul{
+        width: 60%;
+     }
+}
+@media screen and (max-width:768px){
+    header nav ul{
+        width: 60%;
+     }
+    .reactions{
+        width: 90%;
+    }
+}
+@media screen and (max-width:652px){
+    header nav ul{
+        display: none;
+     }
+}
+@media screen and (max-width:500px){
+    .grid-container{
+        display: grid;
+        grid-template-columns:1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+       "post"
+       "post-section"
+       "list"
+       "list-post"
+       "suggestion";
+
+    }
+     .image-div img{
+        width: 100%;
+        height: 50%;
+        
+    }
+    .image-div{
+        width: 100%;
+        height: 100%;
+        /* padding: 15px; */
+        /* line-height: 1.1rem; */
+        border: 1px solid rgba(124, 121, 121, 0.5);
+        
+    }
+    .reactions{
+        width: 90%;
+    }
 }
